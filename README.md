@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## README - RainbowKit Next.js Project
+![image](https://github.com/caiofaabio/transacoes-com-redux/assets/109986771/51e49b06-8d60-48c8-8ffb-606a98edf52c)
 
-## Getting Started
+Este projeto é um exemplo de integração do RainbowKit com Next.js, utilizando o Redux para gerenciamento de estado. O RainbowKit é uma biblioteca que fornece componentes e utilitários para interações com carteiras de criptomoedas em aplicativos web.
+Tecnologias Utilizadas
 
-First, run the development server:
+   * Next.js
+   * React
+   * Redux
+   * RainbowKit
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Configuração do RainbowKit
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O RainbowKit é configurado no arquivo RootLayout.tsx. Ele define a configuração do RainbowKit, incluindo os wallets padrão, provedores de blockchain, configuração de conexão automática e outras opções.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+No arquivo layout.tsx, você pode personalizar a configuração do RainbowKit de acordo com suas necessidades. Certifique-se de fornecer corretamente o ID do projeto RainbowKit e a chave do Alchemy API nas variáveis de ambiente.
+Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   * pages/ - Este diretório contém as páginas do Next.js. No momento, há apenas a página inicial (index.tsx), mas você pode adicionar outras páginas conforme necessário.
 
-## Learn More
+   * components/ - Este diretório contém componentes reutilizáveis. No momento, há o componente TransactionList, que renderiza uma lista de transações.
 
-To learn more about Next.js, take a look at the following resources:
+   * Store/ - Este diretório contém a configuração do Redux, incluindo o arquivo store.ts que cria a store e o arquivo transactionReducer.ts que define o reducer para as transações.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   * styles/ - Este diretório contém arquivos de estilo CSS para estilização dos componentes.
