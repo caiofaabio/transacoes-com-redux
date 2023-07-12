@@ -1,21 +1,30 @@
 "use client";
 import "@rainbow-me/rainbowkit/styles.css";
 import "./globals.css";
-
+// padrao
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
+// wallet
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum, zora } from "wagmi/chains";
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  zora,
+  polygonMumbai,
+} from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+// redux
 import { Provider } from "react-redux";
-import store from "@/Store/store";
+import { store } from "@/Store/store";
+import { ALCHEMY_KEY } from "@/constants";
 
 const { chains, publicClient } = configureChains(
-  [mainnet, polygon, optimism],
-  [alchemyProvider({ apiKey: "yourAlchemyApiKey" }), publicProvider()]
+  [mainnet, polygon, optimism, polygonMumbai],
+  [alchemyProvider({ apiKey: ALCHEMY_KEY }), publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({

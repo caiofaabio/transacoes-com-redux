@@ -1,18 +1,26 @@
-import React from "react";
+import { RootState } from "@/Store/store";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 const TransactionList: React.FC = () => {
-  const transactions = useSelector((state: any) => state.transactions);
+  const transactions = useSelector((state: RootState) => state.transactions);
 
   return (
     <ul>
-      {transactions.map((transaction: any, index: number) => (
-        <li key={index}>
-          <div>Transaction Hash: {Math.random() * 50}</div>
-          <div>Sender: {transaction.sender}</div>
-          <div>Receiver: {transaction.receiver}</div>
-        </li>
-      ))}
+      {transactions.loaded ? (
+        transactions.items.map(
+          (transaction: transactionInfo, index: number) => (
+            <li key={index}>
+              <div>Transaction Hash: {transaction.txnId}</div>
+              <div>Sender: {transaction.from}</div>
+              <div>Receiver: {transaction.to}</div>
+              <div>Value: {transaction.value}</div>
+            </li>
+          )
+        )
+      ) : (
+        <></>
+      )}
     </ul>
   );
 };
