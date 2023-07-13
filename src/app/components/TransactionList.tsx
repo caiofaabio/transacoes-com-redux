@@ -19,7 +19,7 @@ const TransactionList: React.FC = () => {
           )
         )
       ) : (
-        <></>
+        <p>Oops... Nenhuma transação.</p>
       )}
     </ul>
   );
